@@ -37,6 +37,8 @@ gem 'faraday'
 gem 'figaro'
 gem "rspec"
 gem 'rspec_junit_formatter'
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
 
 
 group :development, :test do
