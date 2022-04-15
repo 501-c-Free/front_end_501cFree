@@ -6,7 +6,6 @@ class SessionService
   end
 
   def self.log_in(data)
-    # binding.pry
     response = conn.post('/log_in') do |req|
       req.params['email'] = data[:info][:email]
       req.params['name'] = data[:info][:name]
