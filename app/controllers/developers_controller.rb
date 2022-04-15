@@ -4,6 +4,6 @@ class DevelopersController < ApplicationController
   end
 
   def create
-
+    
   end
 end

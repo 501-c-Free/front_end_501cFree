@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get "/developers/new"
   post "/developers/create"
+  get '/developer', to: 'developers#show'
 
   get "/auth/google_oauth2", to: "sessions#new"
   get "/auth/google_oauth2/callback", to: "sessions#create"
@@ -15,4 +16,5 @@ Rails.application.routes.draw do
   get "/log_in", to: "sessions#new"
   post "/log_in", to: "sessions#create"
   delete "/log_out", to: "sessions#destroy"
+
 end
