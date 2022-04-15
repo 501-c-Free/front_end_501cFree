@@ -14,4 +14,3 @@
 //= require activestorage
 //= require_tree .
 require("bootstrap")
-require("@fortawesome/fontawesome-free")

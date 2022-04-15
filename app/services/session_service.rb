@@ -1,8 +1,7 @@
 class SessionService
   def self.conn
     Faraday.new(
-      url: 'https://localhost:3000/api/v1',
-      headers: {'Accept': 'application/json'})
+      url: 'https://localhost:3000/api/v1')
   end
 
   def self.log_in(data)
