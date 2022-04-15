@@ -3,8 +3,8 @@ version: 2.1 # Use 2.1 to enable using orbs and other features.
 # Declare the orbs that we'll use in our config.
 # read more about orbs: https://circleci.com/docs/2.0/orb-intro/
 orbs:
-  ruby: circleci/ruby@1.0
-  node: circleci/node@2
+  ruby: circleci/ruby:2.7.4
+
 
 jobs:
   build: # our first job, named "build"
@@ -33,7 +33,7 @@ jobs:
         auth:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
-      - image: circleci/postgres:9.5-alpine
+      - image: circleci/postgres:14.2
         auth:
           username: mydockerhub-user
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
