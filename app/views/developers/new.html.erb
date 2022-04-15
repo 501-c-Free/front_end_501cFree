@@ -1,2 +1,14 @@
-<h1>Create Dev Form Here</h1>
-<h1>Test</h1>
+<h1>Register as a Developer</h1>
+
+<div class="dev_form">
+  <%= form_with model: @developer, local: true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+  <%= f.label :email %>
+  <%= f.text_field :email %><br>
+  <%= f.label :github %>
+  <%= f.text_field :github %><br>
+  <%= f.label :linkedin %>
+  <%= f.text_field :linkedin %><br>
+  <%= f.submit "Submit" %>
+</div>
