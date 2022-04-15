@@ -19,7 +19,7 @@ RSpec.describe 'New developer page' do
     fill_in 'Github', with: 'cb'
     fill_in 'LinkedIn', with: 'hire me'
 
-    developer = DeveloperFacade.get_user('cb@gmail.com')
+    developer = DeveloperService.get_user('cb@gmail.com')
     expect(user.github).to eq('cb')
     expect(user.linkedin).to eq('hire me')
     expect(current_path).to eq(developer_path)
