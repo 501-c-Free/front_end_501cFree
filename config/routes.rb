@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get "/developers/new"
   post "/developers/create"
 
+  get "/auth/google_oauth2", to: "sessions#new"
+  get "/auth/google_oauth2/callback", to: "sessions#create"
+
   get "user_choice", to: "welcome#show"
 
   get "/log_in", to: "sessions#new"
