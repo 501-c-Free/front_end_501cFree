@@ -3,16 +3,12 @@ class SessionsController < ApplicationController
 
   def create
     @data = request.env["omniauth.auth"]
-    SessionFacade.log_in(@data)
-    # user = SessionFacade.find_or_create_user(@data)
-    # session[:user_id] = user.id
-    # @email = data[:info][:email]
-    # if SessionFacade.new_user(email)
-    #   redirect_to user_choice_path
-    # else
-    #   @data = request.env["omniauth.auth"]
-    #   SessionFacade.log_in(@data)
-    # end
+    response = SessionFacade.log_in(@data)
+    if response[:user][:type_of_user].nil?
+      redirect_to user_choice_path
+    else
+      #   redirect_to user_dashboard
+    end
   end
 
   def destroy
