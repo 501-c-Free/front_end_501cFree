@@ -6,8 +6,10 @@ class SessionsController < ApplicationController
     response = SessionFacade.log_in(@data)
     if response[:user][:type_of_user].nil?
       redirect_to user_choice_path
+    elsif response[:user][:type_of_user] == 'developer'
+      redirect_to developer_path
     else
-      #   redirect_to user_dashboard
+      redirect_to non_profit_path
     end
   end
 
