@@ -11,6 +11,5 @@ class SessionService
       req.params['access_token'] = data[:credentials][:token]
     end
     attrs = JSON.parse(response.body, symbolize_names: true)
-    binding.pry
   end
 end
