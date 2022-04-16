@@ -1,6 +1,6 @@
 class DevelopersController < ApplicationController
   def new
-    
+
   end
 
   def create
@@ -10,5 +10,9 @@ class DevelopersController < ApplicationController
       linkedin: params[:linkedin]
     }
     DeveloperService.create_dev(data)
+  end
+
+  def show
+
   end
 end
