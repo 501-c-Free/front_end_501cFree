@@ -6,14 +6,7 @@ class DevelopersController < ApplicationController
   end
 
   def create
-    binding.pry
-    # add developer to user 
-
-    # data = {
-    #   email: params[:email],
-    #   github: params[:github],
-    #   linkedin: params[:linkedin]
-    # }
+    
   end
 
   def show
