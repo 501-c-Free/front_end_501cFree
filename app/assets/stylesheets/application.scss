@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+<<<<<<< HEAD
 @import "bootstrap";
 
 
@@ -106,3 +107,6 @@
         border-radius: 6px
     }
 }
+=======
+@import 'bootstrap/scss/bootstrap';
+>>>>>>> ddd7ff97109695d2c998c75ac1e2a58743a5a9aa
