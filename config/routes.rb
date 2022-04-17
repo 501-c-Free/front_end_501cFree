@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get "/non_profits/new"
+  get "/non_profit", to: 'non_profits#show'
   post "/non_profits/create"
 
   get "/developers/new"
