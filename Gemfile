@@ -37,8 +37,10 @@ gem 'faraday'
 gem 'figaro'
 gem "rspec"
 gem 'rspec_junit_formatter'
+
 gem 'omniauth-google-oauth2'
-gem 'jsonapi-serializer'
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
 # gem 'bootstrap', '~> 4.3.1'
 # gem 'jquery-rails'
 
