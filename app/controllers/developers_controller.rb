@@ -6,13 +6,6 @@ class DevelopersController < ApplicationController
   end
 
   def create
-    # add developer to user 
-
-    # data = {
-    #   email: params[:email],
-    #   github: params[:github],
-    #   linkedin: params[:linkedin]
-    # }
   end
 
   def show
