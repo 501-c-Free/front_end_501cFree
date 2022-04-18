@@ -1,6 +1,6 @@
 class RepresentativeService
   def self.connect
-    Faraday.new(url: 'http://localhost:3000')
+    Faraday.new(url: ENV['env_url'])
   end
 
   def self.create_representative(user)
