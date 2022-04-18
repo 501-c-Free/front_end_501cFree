@@ -6,7 +6,6 @@ class DevelopersController < ApplicationController
   end
 
   def create
-    binding.pry
     # add developer to user 
 
     # data = {

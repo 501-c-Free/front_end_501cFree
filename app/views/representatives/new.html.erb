@@ -1,0 +1,8 @@
+<h1>What is your Non Profit?</h1>
+<%# This will be calling apis eventually to search %>
+<h3>Red cross for test is 530196605</h3>
+<%= form_with url: "/non_profits/create", method: :post do |form| %>
+  <%= form.label :query, "Search for your charity with your EIN:" %>
+  <%= form.number_field :ein %>
+  <%= form.submit "Search" %>
+<% end %>

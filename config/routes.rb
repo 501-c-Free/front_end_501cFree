@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "/non_profits/new"
   get "/non_profit", to: 'non_profits#show'
   post "/non_profits/create"
-
+  resources :representatives, only: [:new, :create]
   get "/developers/new"
   post "/developers/create"
   get '/developer', to: 'developers#show'
