@@ -1,7 +1,6 @@
 class SessionService
   def self.conn
-    Faraday.new(
-      url: 'http://localhost:3000')
+    Faraday.new(url: ENV['env_url'])
   end
 
   def self.log_in(data)

@@ -1,6 +1,6 @@
 class NonProfitService
   def self.connect
-    Faraday.new(url: 'http://localhost:3000')
+    Faraday.new(url: ENV['env_url'])
   end
 
   def self.charity_info(ein, current_user)
@@ -10,7 +10,7 @@ class NonProfitService
     end
     return JSON.parse(response.body, symbolize_names: true)
   end
-  
+
   def self.get_user_charity(current_user)
     response = connect.get("/api/v1/non_profits/#{current_user}")
     return JSON.parse(response.body, symbolize_names: true)
