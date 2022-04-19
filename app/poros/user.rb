@@ -4,6 +4,6 @@ class User
   def initialize(data)
     @name = data[:attributes][:name]
     @email = data[:attributes][:email]
-    @email = data[:attributes][:type_of_user]
+    @type_of_user = data[:attributes][:type_of_user]
   end
 end
