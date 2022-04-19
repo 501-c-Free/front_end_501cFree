@@ -13,12 +13,15 @@ RSpec.describe 'New developer page' do
     allow_any_instance_of(ApplicationController)
         .to receive(:current_user).and_return(user)
 
-    stub_omniauth
-    visit root_path
-    click_on 'Log In'
+
   end
 
   it "log in as developer" do
-    expect(current_path).to eq(developer_path)
+    VCR.use_cassette('log_in_user') do
+      stub_omniauth
+      visit root_path
+      click_on 'Log In'
+      expect(current_path).to eq(developer_path)
+    end
   end
 end

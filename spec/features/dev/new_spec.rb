@@ -27,13 +27,6 @@ RSpec.describe 'New developer page' do
     expect(current_path).to eq(user_choice_path)
   end
 
-  it 'bypasses to non_profit_path' do 
-    stub_omniauth
-    visit(non_profit_path)
-    save_and_open_page
-  end
-
-
   xit "has a form with name, email, github, and linkedIn fields" do
 
     visit developers_new_path

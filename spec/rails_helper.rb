@@ -86,7 +86,8 @@ def stub_omniauth
     :uid => "123456789",
     :info => {
       :name => "Tester",
-      :email => "fake@user.com"
+      :email => "fake@user.com",
+      :type_of_user => 'developer'
     },
     :credentials => {
       :token => "token",
