@@ -5,8 +5,8 @@ class SessionsController < ApplicationController
     @data = request.env["omniauth.auth"]
     response = SessionFacade.log_in(@data)
     # user is not in database
-
     session[:user_id] = response[:user][:id]
+    binding.pry
     if response[:user][:type_of_user].nil?
       # representative type of user update needs to be implemented
       redirect_to user_choice_path
