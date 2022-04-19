@@ -14,5 +14,6 @@ class DevelopersController < ApplicationController
   def show
     @user = current_user
     DeveloperService.get_developer(@user)
+    @projects = ProjectService.get_projects
   end
 end
