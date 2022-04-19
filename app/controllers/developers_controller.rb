@@ -12,6 +12,7 @@ class DevelopersController < ApplicationController
   end
 
   def show
-
+    @user = current_user
+    DeveloperService.get_developer(@user)
   end
 end

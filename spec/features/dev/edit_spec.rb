@@ -1,10 +1,14 @@
+require 'rails_helper'
+
 RSpec.describe 'User edit page' do
   it "is linked to from the developer show page" do
+
     visit developer_path
     click_on 'edit profile'
+
     expect(current_path).to eq(developers_edit_path)
   end
-  
+
   it "has a form with name, email, github, and linkedIn fields" do
     visit developers_edit_path
     expect(page).to have_content('Github')

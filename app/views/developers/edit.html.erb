@@ -1,0 +1,12 @@
+<h1>Register as a Developer</h1>
+<%# Add name and email to view static %>
+<div class="dev_form">
+  <%= form_with model: @developer, local: true do |f| %>
+  <%= f.label :github %>
+  <%= f.text_field :github %><br>
+  <%= f.label :linkedin %>
+  <%= f.text_field :linkedin %><br>
+  <%= f.submit "Submit" %>
+</div>
+
+<% end %>

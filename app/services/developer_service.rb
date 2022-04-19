@@ -11,4 +11,17 @@ class DeveloperService
       req.params['linkedin'] = linkedin
     end
   end
+
+  def self.get_developer(user)
+    response = connect.get("/api/v1/get_developer/#{user}")
+    attrs = JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.update_dev(user)
+    response = connect.post('/api/v1/update_developer') do |req|
+      req.params['user_id'] = user
+      req.params['type_of_user'] = 'developer'
+    end
+  end
+
 end
