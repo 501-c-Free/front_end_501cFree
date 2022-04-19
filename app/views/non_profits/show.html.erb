@@ -51,24 +51,17 @@
     </div>
   </div>
   <div class="b-example-divider"></div>
-  <form class="col-lg-6 offset-lg-3">
+  <%# <form class="col-lg-6 offset-lg-3">
       <div class="row">
         <h3>Add your Project:</h3>
-      </div><br>
+      </div><br> %>
 
-
-  <div class="b-example-divider"></div>
+<%= render "new_project"%>
+  <%# <div class="b-example-divider"></div>
   <form class="col-lg-6 offset-lg-3">
       <div class="row">
-        <div class="project_form">
-          <%= form_with url: "/projects", method: :post, local: :true do |f| %>
-          <%= f.label :"Name of Project" %>
-          <%= f.text_field :name %><br>
-          <%= f.label :"Description" %>
-          <%= f.text_field :description, size: "70x5" %><br>
-          <%= f.submit "Submit" %>
-        </div>
-        <% end %>
+        <div class="project_form"> %>
 
-</form>
+<%# 
+</form> %>
 </main>

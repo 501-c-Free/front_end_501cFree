@@ -1,0 +1,9 @@
+
+    <%= form_with url: projects_path, method: :post, local: true do |f| %>
+    <%= f.label :"Name of Project" %>
+    <%= f.text_field :name %><br>
+    <%= f.label :"Description" %>
+    <%= f.text_field :description, size: "70x5" %><br>
+    <%= f.submit "Submit" %>
+<%# </div> %>
+<% end %>

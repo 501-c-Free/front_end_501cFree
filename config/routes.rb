@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get "/auth/google_oauth2/callback", to: "sessions#create"
 
   get "user_choice", to: "welcome#show"
-
+  post "/projects", to: "projects#create"
   get "/log_in", to: "sessions#new"
   post "/log_in", to: "sessions#create"
   delete "/log_out", to: "sessions#destroy"
