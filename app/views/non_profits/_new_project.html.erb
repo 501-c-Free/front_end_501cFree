@@ -1,0 +1,16 @@
+
+<%= form_with url: projects_path, method: :post, local: true do |f| %>
+  <div class="card">
+    <div class="card-body">
+      <div class="mb-3">
+        <%= f.label :name, { class: "form-label"} %>
+        <%= f.text_field :name, { class: "form-control", placeholder: "Name of project" } %>
+      </div>
+      <div class="mb-3">
+        <%= f.label :description, { class: "form-label"} %>
+        <%= f.text_field :description, { class: "form-control", placeholder: "Project Description" } %>
+      </div>
+      <%= f.submit "Submit", class: "btn btn-success" %>
+    </div>
+  </div>
+<% end %>
