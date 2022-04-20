@@ -13,8 +13,7 @@ class DevelopersController < ApplicationController
 
   def show
     user = current_user
-    binding.pry
     @user = DeveloperFacade.get_developer(user)
-    @projects = ProjectFacade.get_projects(user)
+    #@projects = ProjectFacade.get_projects(user)
   end
 end

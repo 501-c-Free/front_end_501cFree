@@ -5,11 +5,12 @@ RSpec.describe 'Developer Show page' do
     let!(:user) {user = User.new({id: 1, attributes: {name: 'Tester',email: 'fake@user.com'}})}
     it "returns a developers info" do
       developer_response = File.read('spec/fixtures/developer_response.json')
-      stub_request(:get, "#{ENV['env_url']}/api/v1/developer/", user.id)
-      .with(headers: {developer_id: 1})
+      uri_template = Addressable::Template.new "#{ENV['env_url']}/api/v1/developer/#{user.id}"
+      stub_request(:get, uri_template)
       .to_return(status: 200, body: developer_response)
       project_response = File.read('spec/fixtures/project_response.json')
-      stub_request(:get, "http://localhost:3000/api/v1/developer/:id/projects")
+      uri_template2 = Addressable::Template.new "#{ENV['env_url']}/api/v1/developer/#{user.id}/projects"
+      stub_request(:get, uri_template2)
       .to_return(status: 200, body: project_response)
 
       dev_response = JSON.parse(developer_response)
