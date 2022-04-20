@@ -15,4 +15,12 @@ class DevelopersController < ApplicationController
     @user = DeveloperFacade.get_developer(user)
     @projects = ProjectFacade.get_user_projects(user)
   end
+
+  def edit
+
+  end
+
+  def update
+    
+  end
 end

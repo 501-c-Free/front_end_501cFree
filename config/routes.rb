@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "/developers/new"
   post "/developers/create"
   get '/developer', to: 'developers#show'
-  post '/developer/edit', to: 'developers#edit'
+  get '/developer/edit', to: 'developers#edit'
   patch '/developer', to: 'developers#update'
 
   get "/auth/google_oauth2", to: "sessions#new"
