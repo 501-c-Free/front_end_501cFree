@@ -1,5 +1,5 @@
 class User
-  attr_reader :name, :email
+  attr_reader :id, :name, :email, :type_of_user
 
   def initialize(data)
     @name = data[:attributes][:name]

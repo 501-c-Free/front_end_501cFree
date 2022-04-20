@@ -9,6 +9,6 @@ class ProjectsController < ApplicationController
   end
 
   def show
-
+    @project = ProjectFacade.get_project(params[:id])
   end
 end

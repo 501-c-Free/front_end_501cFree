@@ -1,0 +1,16 @@
+<head>
+  <%= button_to "Edit Profile", developer_edit_path , method: :get %>
+</head>
+<div class="title">
+  <h2> <%= "Welcome #{@user.name}" %> </h2>
+  <span style='font-size:100px;'>&#128075;</span>
+</div>
+
+<div class="projects">
+  <% if @projects != [] %>
+    <% @projects.each do |project| %>
+    <%= link_to project.project_name, "/project/#{project.id}" %>
+    <%= project.description %>
+    <% end %>
+  <% end %>
+</div>
