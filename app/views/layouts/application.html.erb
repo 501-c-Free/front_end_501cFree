@@ -22,7 +22,23 @@
 
   <body>
     <%= render "layouts/nav" %>
+
+    <section class="bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 pt-4">
+            <% flash.each do |type, msg| %>
+            <div class="alert alert-info">
+              <%= msg %>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <%= yield %>
     <%= render "layouts/footer" %>
+
   </body>
 </html>

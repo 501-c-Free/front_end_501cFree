@@ -13,12 +13,18 @@
 # it.
 #
 require 'simplecov'
+
 SimpleCov.start 'rails'
 SimpleCov.add_filter ['spec', 'config']
 
 require 'webmock/rspec'
+
+WebMock.disable_net_connect!(allow_localhost: true)
+
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+
+
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
@@ -68,7 +74,6 @@ RSpec.configure do |config|
   # recommended. For more details, see:
   # https://relishapp.com/rspec/rspec-core/docs/configuration/zero-monkey-patching-mode
   config.disable_monkey_patching!
-
   # Many RSpec users commonly either run the entire suite or an individual
   # file, and it's useful to allow more verbose output when running an
   # individual spec file.
