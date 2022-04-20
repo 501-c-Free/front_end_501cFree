@@ -1,0 +1,28 @@
+<div class="px-4 py-1 my-3 text-center">
+  <h3 class="display-5 fw-bold"><%= flash[:notice] if flash[:notice]%></h3><br>
+<div class="px-4 py-1 my-3 text-center">
+  <h1 class="display-5 fw-bold">Search your organization:</h1><br>
+  <h6 class="display-5 fw-bold">This will help you to easily add the organizations info to your profile.</h6><br>
+    <div class="col-lg-6 mx-auto">
+      <%= form_with url: "/non_profits/create", method: :post, local: :true do |f| %>
+      <div class="card">
+        <div class="card-body">
+          <div class="mb-3">
+            <%= f.label :"Search", { class: "form-label", placeholder: "Find for your orginization with your EIN:" } %>
+            <%= f.number_field :ein, { class: "form-control", placeholder: "Enter EIN here" } %>
+          </div>
+          <%= f.submit "Submit", class: "btn btn-success" %>
+        </div>
+      <% end %>
+    </div><br>
+    <h6>Red cross for test is 530196605</h6>
+    <h6>Habitat for humanity for test is 911914868</h6>
+    <h6>Propublica for test is 142007220</h6>
+    <h6>Colorado Public Radio for test is 742324052</h6>
+    <h6>Denver Dumb Friends league for test is 840405254</h6>
+    <h6>energy outreach colorado for test is 742543881</h6>
+    <h6>The Womens foundation Colorado for test is 841039305</h6>
+    <h6>Colorado Center on Law and Policy for test is 841264154</h6>
+    <h6>The Colorado I Have A Dream Foundation for test is 742497109</h6>
+
+    </div>
