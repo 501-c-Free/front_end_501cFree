@@ -24,4 +24,6 @@ Rails.application.routes.draw do
   post "/log_in", to: "sessions#create"
   delete "/log_out", to: "sessions#destroy"
 
+  get "/non_profit/dashboard", to: 'non_profits#index'
+
 end
