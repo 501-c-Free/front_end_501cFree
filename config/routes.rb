@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   get "/auth/google_oauth2", to: "sessions#new"
   get "/auth/google_oauth2/callback", to: "sessions#create"
 
+  get '/calendar', to: 'calendars#show'
+  get '/oauth/callback', to: 'calendars#create'
+
   get "user_choice", to: "welcome#show"
   post "/projects", to: "projects#create"
   get "/log_in", to: "sessions#new"

@@ -1,0 +1,12 @@
+{
+    id: 1,
+    data: [
+      attributes: {
+        name: 'Anyone',
+        email: 'any@mail.com',
+        type_of_user: 'developer',
+        github: nil,
+        linkedin: nil,
+      }
+    ]
+  }

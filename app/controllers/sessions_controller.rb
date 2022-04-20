@@ -4,8 +4,7 @@ class SessionsController < ApplicationController
   def create
     @data = request.env["omniauth.auth"]
     response = SessionFacade.log_in(@data)
-    # user is not in database
-
+    # user is not in database\
     session[:user_id] = response[:user][:id]
     if response[:user][:type_of_user].nil?
       # representative type of user update needs to be implemented
