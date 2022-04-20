@@ -2,7 +2,6 @@ class SessionsController < ApplicationController
   def new;end
 
   def create
-    binding.pry
     @data = request.env["omniauth.auth"]
     response = SessionFacade.log_in(@data)
     # user is not in database\
