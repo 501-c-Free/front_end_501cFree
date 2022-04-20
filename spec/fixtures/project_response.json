@@ -1,0 +1,11 @@
+{
+ "data": {
+   "id": "1",
+   "type": "project",
+   "attributes": {
+     "project_name": "The Greatest Project in the World",
+     "description": "stuff",
+     "non_profit_id": "2"
+    }
+  }
+}

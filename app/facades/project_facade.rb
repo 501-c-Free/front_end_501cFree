@@ -1,6 +1,11 @@
 class ProjectFacade
-  def get_project(id)
+  def self.get_project(id)
     json = ProjectService.get_developer(user)
-    Projecgt.new(json[:data])
+    Project.new(json[:data])
+  end
+
+  def self.get_projects(user)
+    json = ProjectService.get_projects(user)
+    
   end
 end

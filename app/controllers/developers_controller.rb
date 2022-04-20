@@ -12,8 +12,9 @@ class DevelopersController < ApplicationController
   end
 
   def show
-    @user = current_user
-    DeveloperService.get_developer(@user)
-    @projects = ProjectService.get_projects
+    user = current_user
+    binding.pry
+    @user = DeveloperFacade.get_developer(user)
+    @projects = ProjectFacade.get_projects(user)
   end
 end

@@ -13,7 +13,7 @@ class DeveloperService
   end
 
   def self.get_developer(user)
-    response = connect.get("/api/v1/get_developer/#{user}")
+    response = connect.get("/api/v1/developer/#{user}")
     attrs = JSON.parse(response.body, symbolize_names: true)
   end
 
