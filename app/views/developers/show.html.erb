@@ -1,11 +1,10 @@
-<h1>Dev Show page</h1>
 <h2> <%= "Welcome #{@user.name}" %> </h2>
 
-<%= button_to "Edit Profile", developer_edit_path %>
+<%= button_to "Edit Profile", developer_edit_path , method: :get %>
 
 <% if @projects != [] %>
-  <%= @projects.each do |project| %>
-    <%= link_to project.name, project_path %>
+  <% @projects.each do |project| %>
+    <%= link_to project.project_name, "/project/#{project.id}" %>
     <%= project.description %>
   <% end %>
 <% end %>
