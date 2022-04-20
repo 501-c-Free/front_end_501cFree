@@ -3,7 +3,9 @@
 
 <%= button_to "Edit Profile", developer_edit_path %>
 
-<%= @projects.each do |project| %>
-  <%= link_to project.name, project_path %>
-  <%= project.description %>
+<% if @projects != [] %>
+  <%= @projects.each do |project| %>
+    <%= link_to project.name, project_path %>
+    <%= project.description %>
+  <% end %>
 <% end %>

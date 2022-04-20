@@ -3,7 +3,7 @@ class Project
 
   def initialize(data)
     @id = data[:id]
-    @project_name = data[:attributes][:project_name]
-    @description = data[:attributes][:description]
+    @project_name = data[:project_name]
+    @description = data[:description]
   end
 end
