@@ -6,6 +6,6 @@ class CalendarsController < ApplicationController
   end
 
   def show
-    redirect_to "https://auth.calendly.com/oauth/authorize?client_id=SUtqlCCcfxpKAItDPbfljxbcCxZD2uYrQ52Q5gZ17qI&response_type=code&redirect_uri=http://localhost:5000/oauth/callback"
+    redirect_to "https://auth.calendly.com/oauth/authorize?client_id=#{ENV["calendly_client_id"]}&response_type=code&redirect_uri=#{ENV["env_redirect"]}"
   end
 end
