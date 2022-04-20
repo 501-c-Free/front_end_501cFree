@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get '/calendar', to: 'calendars#show'
   get '/oauth/callback', to: 'calendars#create'
 
+  get "/non_profit/dashboard", to: 'non_profits#index'
   get "user_choice", to: "welcome#show"
   post "/projects", to: "projects#create"
   get "/project/:id", to: "projects#show"
@@ -24,6 +25,5 @@ Rails.application.routes.draw do
   post "/log_in", to: "sessions#create"
   delete "/log_out", to: "sessions#destroy"
 
-  get "/non_profit/dashboard", to: 'non_profits#index'
 
 end
