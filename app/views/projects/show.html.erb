@@ -1,1 +1,22 @@
 <h1><%= @project.project_name %></h1>
+
+<h3>Developers</h3>
+
+<% if @project.developers.nil? %>
+<p>No developers yet</p>
+
+<% else %>
+<h4>Current Developers </h4>
+<% @project.developers.each do |developer| %>
+    <h3><%=developer.name %> </h3>
+    <p><%= mail_to(developer.email) %></p>
+    <p><%= link_to("Linkedin", developer.linkedin) if developer.linkedin%></p>
+    <p><%= link_to("Github", developer.github) if developer.github %></p>
+<% end %>
+
+<% end %>
+
+<h4>About this project</h4>
+<h3>Organization: <%= link_to(@project.charity_name, "/non_profit?id=#{@project.charity_id}") %></h3>
+<p><%= @project.description %></p>
+<%= link_to("Manage Project", edit_project_path(@project.project_id) ) if current_user == @project.owner_id %>
