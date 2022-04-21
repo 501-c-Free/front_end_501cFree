@@ -9,7 +9,8 @@ class CalendlyService
         'client_id' => ENV['calendly_client_id'],
         'code' => (code),
         'redirect_uri' => ENV['env_redirect'],
-        'grant_type' => 'authorization_code'
+        'grant_type' => 'authorization_code',
+        'client_secret' => ENV['calendly_client_secret'],
         }
     end
     data = JSON.parse(response.body, symbolize_names: true)

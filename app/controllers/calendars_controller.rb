@@ -1,6 +1,6 @@
 class CalendarsController < ApplicationController
   def create
-    response = CalendlyFacade.get_calendar(params[:code])
+    response = CalendlyFacade.get_calendar(params["code"])
     @charity_info = NonProfitService.update_charity(response, session[:user_id])
     redirect_to non_profit_path
   end
