@@ -16,11 +16,11 @@ class DevelopersController < ApplicationController
     @projects = ProjectFacade.get_user_projects(user)
   end
 
-  def edit
-
-  end
+  def edit;end
 
   def update
-    
+    user = current_user
+    DeveloperService.update_dev(user, params[:github], params[:linkedin])
+    redirect_to developer_path
   end
 end
