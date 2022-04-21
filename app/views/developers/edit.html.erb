@@ -3,9 +3,9 @@
 <div class="dev_form">
   <%= form_with url: '/developer', method: :patch, local: true do |f| %>
   <%= f.label :github %>
-  <%= f.text_field :github %><br>
+  <%= f.text_field :github, value: @developer.github %><br>
   <%= f.label :linkedin %>
-  <%= f.text_field :linkedin %><br>
+  <%= f.text_field :linkedin, value: @developer.linkedin %><br>
   <%= f.submit "Submit" %>
 </div>
 

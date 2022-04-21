@@ -11,12 +11,19 @@ class DevelopersController < ApplicationController
   end
 
   def show
-    user = current_user
-    @user = DeveloperFacade.get_developer(user)
-    @projects = ProjectFacade.get_user_projects(user)
-  end
+    if params[:user_id]
+      @user = DeveloperFacade.get_developer(params[:user_id])
+      @projects = ProjectFacade.get_user_projects(params[:user_id])
+    else 
+      @user = DeveloperFacade.get_developer(current_user)
+      @projects = ProjectFacade.get_user_projects(current_user)
 
-  def edit;end
+    end
+  end
+  
+  def edit
+    @developer = DeveloperFacade.get_developer(current_user)
+  end
 
   def update
     user = current_user

@@ -18,8 +18,7 @@ class DeveloperService
   end
   
   def self.update_dev(user, github, linkedin)
-    response = connect.patch('/api/v1/update_developer') do |req|
-      req.params['user_id'] = user
+    response = connect.patch("/api/v1/developer/#{user}") do |req|
       req.params['github'] = github
       req.params['linkedin'] = linkedin
     end
