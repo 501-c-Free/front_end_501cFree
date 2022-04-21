@@ -23,4 +23,8 @@ class DevelopersController < ApplicationController
     DeveloperService.update_dev(user, params[:github], params[:linkedin])
     redirect_to developer_path
   end
+
+  def index 
+    @developers = DeveloperFacade.get_all_developers
+  end
 end
