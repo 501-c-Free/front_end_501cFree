@@ -57,10 +57,12 @@
       <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     <% end %>
   </div>
+  <% if @charity_info[:data][:attributes][:user_owner][:user] == current_user%>
     <div class="px-4 py-1 my-3 text-center">
       <h1 class="display-5 fw-bold">Add your project:</h1><br>
     <div class="col-lg-6 mx-auto">
       <%= render "new_project"%>
     </div>
+    <%end%>
 </div>
 </main>
