@@ -12,4 +12,9 @@ class ProjectFacade
       Project.new(project_data)
     end
   end
+
+  def self.get_project(id)
+    response = ProjectService.get_project(id)
+    Project.new(response[:data])
+  end
 end
