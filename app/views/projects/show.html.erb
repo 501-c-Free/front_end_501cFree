@@ -19,4 +19,12 @@
 <h4>About this project</h4>
 <h3>Organization: <%= link_to(@project.charity_name, "/non_profit?id=#{@project.charity_id}") %></h3>
 <p><%= @project.description %></p>
-<%= link_to("Manage Project", edit_project_path(@project.project_id) ) if current_user == @project.owner_id %>
+<%= link_to("Manage Project", edit_project_path(@project.project_id) ) if current_user == @project.owner_id %><br>
+
+<% if @charity_info[:data][:attributes][:non_profit][:calendly].nil? %>
+  <center><h2><%= "#{@charity_info[:data][:attributes][:non_profit][:non_profit_name]} has yet to set up a calendar. Try again later" %><h2></center>
+<% else %>
+  <center><h2>Schedule an Appointment</h2></center>
+  <div class="calendly-inline-widget" data-url="https://calendly.com/<%=@charity_info[:data][:attributes][:non_profit][:calendly]%>" style="min-width:320px;height:630px;"></div>
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<% end  %>
