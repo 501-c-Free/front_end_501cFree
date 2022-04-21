@@ -1,10 +1,7 @@
 <div class="px-4 py-1 my-3 text-center">
   <h3 class="display-5 fw-bold"><%= flash[:notice] if flash[:notice]%></h3><br>
-
 <div class="px-4 py-1 my-3 text-center">
-  <div class="search-title">
-    <h1 class="display-5 fw-bold">Search your organization:</h1><br>
-  </div>
+  <h1 class="display-5 fw-bold">Search your organization:</h1><br>
   <h6 class="display-5 fw-bold">This will help you to easily add the organizations info to your profile.</h6><br>
     <div class="col-lg-6 mx-auto">
       <%= form_with url: "/non_profits/create", method: :post, local: :true do |f| %>
