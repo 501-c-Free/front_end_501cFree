@@ -7,6 +7,7 @@
         type_of_user: 'developer',
         github: nil,
         linkedin: nil,
+        access_token: 2015412
       }
     ]
   }

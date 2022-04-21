@@ -7,9 +7,9 @@ class CalendlyService
     response = connect.post('/oauth/token') do |req|
       req.body = {
         'client_id' => ENV['calendly_client_id'],
-        'code' => (code),
+        'code' => code,
         'redirect_uri' => ENV['env_redirect'],
-        'grant_type' => 'authorization_code'
+        'grant_type' => 'authorization_code',
         }
     end
     data = JSON.parse(response.body, symbolize_names: true)

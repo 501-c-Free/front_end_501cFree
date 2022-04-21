@@ -53,8 +53,8 @@
       <img src="https://theme.zdassets.com/theme_assets/1024340/78b0cd1ea78d2763fb98cb466ef065903b5efc0b.png"  style="width: 150px; height: 150px; margin: 0px;"><br><br>
       <%= button_to 'Link Calendly Account', calendar_path, method: :get, class: 'btn btn-primary btn-lg' %>
     <% else %>
-      <div class="calendly-inline-widget" data-url="https://calendly.com/<%=@charity_info[:data][:attributes][:non_profit][:calendly]%>" style="min-width:320px;height:630px;"></div>
-      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      <img src="https://theme.zdassets.com/theme_assets/1024340/78b0cd1ea78d2763fb98cb466ef065903b5efc0b.png"  style="width: 150px; height: 150px; margin: 0px;"><br><br>
+      <h3>Your Calendly account has been linked!</h3>
     <% end %>
   </div>
   <% if @charity_info[:data][:attributes][:user_owner][:user] == current_user%>
