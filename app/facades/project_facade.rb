@@ -8,9 +8,12 @@ class ProjectFacade
 
   def self.get_user_projects(id)
     json = ProjectService.get_user_projects(id)
-    json[:data][:attributes][:projects].map do |project_data|
-      Project.new(project_data)
+    if json[:data].any?
+      projects = json[:data].map do |project_data|
+        Project.new(project_data)
+      end
     end
+    return projects
   end
 
   def self.get_project(id)
