@@ -19,11 +19,11 @@ class ProjectsController < ApplicationController
   def edit 
     @project = ProjectFacade.get_project(params[:id])
     @developers = DeveloperFacade.get_all_developers
-    @developer = DeveloperFacade.get_developer(params[:id])
   end
 
   def update 
+    binding.pry
     response = ProjectService.update_project(params[:id], params[:name], params[:description], params[:developer_id])
-    redirect_to(project_path(params[:id]))
+    redirect_to(project_path(params[:id]), notice: 'Project updated!')
   end
 end

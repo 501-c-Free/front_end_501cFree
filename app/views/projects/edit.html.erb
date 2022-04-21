@@ -11,7 +11,7 @@
         <%= f.label :description, { class: "form-label"} %>
         <%= f.text_field :description, { class: "form-control", value: "#{@project.description}" } %>
         <%= f.label :add_developer_to_project, { class: "form-label"}%>
-  <%= f.select :developer_id, options_for_select(@developers.collect { | developer | [developer.name, developer.id] }), {}, {} %>
+  <%= f.select :developer_id, options_for_select(@developers.collect { | developer | [developer.name, developer.id] }), {include_blank: 'Add developer here'}, {} %>
       </div>
       <%= f.submit "Submit", class: "btn btn-success" %>
     </div>
