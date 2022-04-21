@@ -3,7 +3,7 @@
 <% @developers.each do |developer| %>
     <h3><%=developer.name %></h3>
     <p><%= mail_to(developer.email) %></p>
-    <p><%= link_to("Linkedin", developer.linkedin) if developer.linkedin%></p>
-    <p><%= link_to("Github", developer.github) if developer.github%></p>
+    <p><%= link_to("Linkedin", developer.linkedin) if developer.linkedin != ""%></p>
+    <p><%= link_to("Github", developer.github) if developer.github != ""%></p>
     <%# TODO do we want links to page? It is already in the developer object. Just a question of authorization %>
 <% end %>

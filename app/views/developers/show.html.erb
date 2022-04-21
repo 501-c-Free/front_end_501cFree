@@ -17,6 +17,10 @@
 </div>
 
 <div class="social">
-  <%= @user.github %>
-  <%= @user.linkedin %>
+  <% if @user.github != "" %>
+    <%= link_to "Github", "#{@user.github}" %>
+  <% end %>
+  <% if @user.linkedin != "" %>
+    <%= link_to "LinkedIn", "#{@user.linkedin}" %>
+  <% end %>
 </div>
