@@ -2,6 +2,10 @@ class ProjectsController < ApplicationController
   def new
   end
 
+  def index 
+    @projects = ProjectFacade.get_all_projects
+  end
+
   def create
       @user = current_user
       ProjectService.create_project(@user, params[:name], params[:description])

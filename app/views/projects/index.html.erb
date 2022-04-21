@@ -1,0 +1,12 @@
+<h1>Projects Index</h1>
+<%# #TODO Stylize %>
+<% @projects.each do |project| %>
+    <a href = <%= "/projects/#{project.project_id}"%> >
+        <h3><%= project.project_name %> <h3>
+    </a>
+        <p>Description: <%= project.description %></p>
+    <a href = <%= "/non_profit?id=#{project.charity_id}"%>> 
+    <%# #TODO make sure link works %>
+        <p><%= project.charity_name %></p>
+    </a> 
+<% end %>
