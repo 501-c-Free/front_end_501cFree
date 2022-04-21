@@ -1,26 +1,30 @@
 <head>
+<% if current_user == @user.user_id%>
   <%= button_to "Edit Profile", developer_edit_path , method: :get %>
-</head>
 <div class="title">
   <h2> <%= "Welcome #{@user.name}" %> </h2>
   <span style='font-size:75px;'>&#128075;</span>
 </div>
+  <%else %>
+<div class="title">
+  <h2> <%= "Welcome to #{@user.name}'s Page!" %> </h2>
+  <span style='font-size:75px;'>&#128075;</span>
+</div>
+<%end%>
+</head>
 
 <div class="projects">
-  <% if @projects != [] %>
+<div class="social"><a href=<%= @user.linkedin%>><i class="icon ion-social-linkedin"></i></a><a href="#"><i class="icon ion-social-github"></i></a><a href=<%=@user.github %>>
+  </div>
+  <h4><%= link_to "View All Projects", projects_path %></h4>
+  <br>
+  <% unless @projects.nil? %>
+  <h4>Current Projects</h4>
     <% @projects.each do |project| %>
-    <%= link_to project.project_name, "/project/#{project.id}" %>
+    <%= link_to(project.project_name, "/project/#{project.project_id}") %>
+    
     <%= project.description %>
     <% end %>
   <% end %>
   <%= link_to "View All Projects", projects_path %>
-</div>
-
-<div class="social">
-  <% if @user.github != "" %>
-    <%= link_to "Github", "#{@user.github}" %>
-  <% end %>
-  <% if @user.linkedin != "" %>
-    <%= link_to "LinkedIn", "#{@user.linkedin}" %>
-  <% end %>
 </div>

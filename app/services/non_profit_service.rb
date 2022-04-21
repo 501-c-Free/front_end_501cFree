@@ -11,8 +11,8 @@ class NonProfitService
     return JSON.parse(response.body, symbolize_names: true)
   end
 
-  def self.get_user_charity(current_user)
-    response = connect.get("/api/v1/non_profits/#{current_user}")
+  def self.get_user_charity(user)
+    response = connect.get("/api/v1/non_profits/#{user}")
     return JSON.parse(response.body, symbolize_names: true)
   end
 

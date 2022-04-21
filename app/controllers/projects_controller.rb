@@ -22,6 +22,7 @@ class ProjectsController < ApplicationController
     @developers = DeveloperFacade.get_all_developers
   end
 
+
   def update
     response = ProjectService.update_project(params[:id], params[:name], params[:description], params[:developer_id])
     redirect_to(project_path(params[:id]), notice: 'Project updated!')
