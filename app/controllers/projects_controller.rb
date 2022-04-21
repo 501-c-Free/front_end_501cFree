@@ -22,7 +22,6 @@ class ProjectsController < ApplicationController
   end
 
   def update 
-    binding.pry
     response = ProjectService.update_project(params[:id], params[:name], params[:description], params[:developer_id])
     redirect_to(project_path(params[:id]), notice: 'Project updated!')
   end
