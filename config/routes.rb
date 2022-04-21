@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/developer', to: 'developers#show'
   get '/developer/edit', to: 'developers#edit'
   patch '/developer', to: 'developers#update'
+  get '/developers', to: "developers#index"
 
   get "/auth/google_oauth2", to: "sessions#new"
   get "/auth/google_oauth2/callback", to: "sessions#create"
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
   get "/log_in", to: "sessions#new"
   post "/log_in", to: "sessions#create"
   delete "/log_out", to: "sessions#destroy"
+
 
 
 end
