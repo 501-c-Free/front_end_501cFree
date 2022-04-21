@@ -17,11 +17,9 @@ class NonProfitService
   end
 
   def self.update_charity(username, current_user)
-    binding.pry
     response = connect.patch("/api/v1/non_profits/#{current_user}") do |req|
       req.params['calendly'] = username
     end
-    binding.pry
     return JSON.parse(response.body, symbolize_names: true)
   end
 end
