@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   def new
   end
 
-  def index 
+  def index
     @projects = ProjectFacade.get_all_projects
   end
 
@@ -14,15 +14,15 @@ class ProjectsController < ApplicationController
 
   def show
     @project = ProjectFacade.get_project(params[:id])
+    @charity_info = NonProfitService.get_user_charity(@project.charity_id)
   end
 
-  def edit 
+  def edit
     @project = ProjectFacade.get_project(params[:id])
     @developers = DeveloperFacade.get_all_developers
   end
 
-  def update 
-    binding.pry
+  def update
     response = ProjectService.update_project(params[:id], params[:name], params[:description], params[:developer_id])
     redirect_to(project_path(params[:id]), notice: 'Project updated!')
   end
