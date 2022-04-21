@@ -12,4 +12,13 @@ class ProjectService
     response = conn.get("/api/v1/get_all_projects")
     attrs = JSON.parse(response.body, symbolize_names: true)
   end
+
+
+  def self.create_project(user, project_name, description)
+    response = conn.post('/api/v1/projects') do |req|
+      req.params['user_id'] = user
+      req.params['project_name'] = project_name
+      req.params['description'] = description
+    end
+  end
 end
