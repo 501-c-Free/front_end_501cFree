@@ -17,6 +17,10 @@ class NonProfitsController < ApplicationController
 
   def show
     # this needs to change to different api endpoint independent of creation
-    @charity_info = NonProfitService.get_user_charity(current_user)
+    if current_user 
+      @charity_info = NonProfitService.get_user_charity(current_user)
+    else # non profit if not logged in
+      @charity_info = NonProfitService.get_user_charity(params[:id])
+    end
   end
 end

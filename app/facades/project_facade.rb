@@ -1,7 +1,7 @@
 class ProjectFacade
   def self.get_all_projects
     json = ProjectService.get_all_projects
-    json[:data][:attributes][:projects].map do |project_data|
+    json[:data].map do |project_data|
       Project.new(project_data)
     end
   end

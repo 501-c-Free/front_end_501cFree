@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   get "/non_profit/dashboard", to: 'non_profits#index'
   get "user_choice", to: "welcome#show"
-  post "/projects", to: "projects#create"
+  resources :projects, only: [:create, :index, :show]
   get "/project/:id", to: "projects#show"
   get "/log_in", to: "sessions#new"
   post "/log_in", to: "sessions#create"

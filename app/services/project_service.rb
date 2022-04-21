@@ -9,7 +9,7 @@ class ProjectService
   end
 
   def self.get_all_projects
-    response = conn.get("/api/v1/get_all_projects")
+    response = conn.get("/api/v1/projects")
     attrs = JSON.parse(response.body, symbolize_names: true)
   end
 
