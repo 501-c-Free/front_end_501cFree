@@ -17,10 +17,11 @@ class DeveloperService
     attrs = JSON.parse(response.body, symbolize_names: true)
   end
 
-  def self.update_dev(user)
-    response = connect.post('/api/v1/update_developer') do |req|
+  def self.update_dev(user, github, linkedin)
+    response = connect.patch('/api/v1/update_developer') do |req|
       req.params['user_id'] = user
-      req.params['type_of_user'] = 'developer'
+      req.params['github'] = github
+      req.params['linkedin'] = linkedin
     end
   end
 
