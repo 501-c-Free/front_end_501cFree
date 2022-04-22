@@ -1,12 +1,23 @@
-<h1>Projects Index</h1>
-<%# #TODO Stylize %>
-<% @projects.each do |project| %>
-    <a href = <%= "/projects/#{project.project_id}"%> >
-        <h3><%= project.project_name %> <h3>
-    </a>
-        <p>Description: <%= project.description %></p>
-    <a href = <%= "/non_profit?id=#{project.charity_id}"%>> 
-    <%# #TODO make sure link works %>
-        <p><%= project.charity_name %></p>
-    </a> 
-<% end %>
+<div class=" overflow-hidden p-3 p-md-5 m-md-1 text-center bg-light">
+    <div class="col-md-5 mx-auto my-5">
+      <h1 class="display-4 fw-normal">All Projects:</h1>
+        <div class="row row-cols-1 row-cols-md-3">
+          <% @projects.each do |project| %>
+              <div class="col-md-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h6 class="card-title">  <a href = <%= "/projects/#{project.project_id}"%> >
+                          <h3><%= project.project_name %> <h3>
+                      </a></h6>
+                    <p class="card-text">Description: <%= project.description %></p>
+                    <p class="card-text">Non-profit:<a href = <%= "/non_profit?id=#{project.owner_id}"%>></p>
+                    <h6 class="card-title">  <a href = <%= "/non_profit?id=#{project.owner_id}"%>>
+                        <p><%= project.charity_name %></p>
+                    </a></h6>
+                  </div>
+                </div>
+              </div>
+          <% end %>
+        </div>
+    </div>
+  </div>

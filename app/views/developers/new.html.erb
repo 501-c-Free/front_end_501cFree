@@ -1,12 +1,22 @@
-<h1>Register as a Developer</h1>
-<%# Add name and email to view static %>
+<div class="px-4 py-1 my-3 text-center">
+  <h1 class="display-5 fw-bold">Register as a Developer:</h1><br>
+<div class="col-lg-6 mx-auto">
 <div class="dev_form">
   <%= form_with url: developers_create_path, local: true do |f| %>
-  <%= f.label :github %>
-  <%= f.text_field :github %><br>
-  <%= f.label :linkedin %>
-  <%= f.text_field :linkedin %><br>
-  <%= f.submit "Submit" %>
+  <div class="card">
+    <div class="card-body">
+      <div class="mb-3">
+        <%= f.label :github %>
+        <%= f.text_field :github%><br>
+      </div>
+      <div class="mb-3">
+        <%= f.label :linkedin %>
+        <%= f.text_field :linkedin%><br>
+      </div>
+      <%= f.submit "Submit", class: "btn btn-success" %>
+    </div>
+  </div>
 </div>
 
 <% end %>
+</div></div>

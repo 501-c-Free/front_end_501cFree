@@ -14,7 +14,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = ProjectFacade.get_project(params[:id])
-    @charity_info = NonProfitService.get_user_charity(@project.charity_id)
+    @charity_info = NonProfitService.get_user_charity(@project.owner_id)
   end
 
   def edit

@@ -16,6 +16,7 @@ class NonProfitsController < ApplicationController
   end
 
   def show
+    # given non profit. Non profit can have projects. From projects we get owner of project
     if params[:id].present? == false
       @charity_info = NonProfitService.get_user_charity(current_user)
     else

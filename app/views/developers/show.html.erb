@@ -1,5 +1,9 @@
-<head>
 <% if current_user == @user.user_id%>
+<div class="px-4 py-1 my-3 text-center">
+  <h1 class="display-5 fw-bold"><%= "Welcome #{@user.name}" %></h1><br>
+  <h4 class="display-5 fw-bold">Update profile:</h4><br>
+<div class="col-lg-6 mx-auto">
+<head>
   <%= button_to "Edit Profile", developer_edit_path , method: :get %>
 <div class="title">
   <h2> <%= "Welcome #{@user.name}" %> </h2>
@@ -14,17 +18,19 @@
 </head>
 
 <div class="projects">
-<div class="social"><a href=<%= @user.linkedin%>><i class="icon ion-social-linkedin"></i></a><a href="#"><i class="icon ion-social-github"></i></a><a href=<%=@user.github %>>
+<div class="social"><a href=<%= @user.linkedin%>><i class="icon ion-social-linkedin"></i></a><a href=<%= @user.github%>><i class="icon ion-social-github"></i></a><a href=<%=@user.github %>>
   </div>
+  <br>
   <h4><%= link_to "View All Projects", projects_path %></h4>
   <br>
   <% unless @projects.nil? %>
   <h4>Current Projects</h4>
     <% @projects.each do |project| %>
     <%= link_to(project.project_name, "/project/#{project.project_id}") %>
-    
+
     <%= project.description %>
     <% end %>
   <% end %>
-  <%= link_to "View All Projects", projects_path %>
+</div>
+</div>
 </div>

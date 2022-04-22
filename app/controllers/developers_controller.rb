@@ -11,9 +11,9 @@ class DevelopersController < ApplicationController
   end
 
   def show
-    if params[:user_id]
-      @user = DeveloperFacade.get_developer(params[:user_id])
-      @projects = ProjectFacade.get_user_projects(params[:user_id])
+    if params[:id]
+      @user = DeveloperFacade.get_developer(params[:id])
+      @projects = ProjectFacade.get_user_projects(params[:id])
     else 
       @user = DeveloperFacade.get_developer(current_user)
       @projects = ProjectFacade.get_user_projects(current_user)
