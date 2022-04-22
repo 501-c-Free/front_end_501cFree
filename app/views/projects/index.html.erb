@@ -1,15 +1,3 @@
-<h1>Projects Index</h1>
-<%# #TODO Stylize %>
-<% @projects.each do |project| %>
-    <a href = <%= "/projects/#{project.project_id}"%> >
-        <h3><%= project.project_name %> <h3>
-    </a>
-        <p>Description: <%= project.description %></p>
-    <a href = <%= "/non_profit?id=#{project.charity_id}"%>>
-    <%# #TODO make sure link works %>
-        <p><%= project.charity_name %></p>
-    </a>
-<% end %>
 <div class=" overflow-hidden p-3 p-md-5 m-md-1 text-center bg-light">
     <div class="col-md-5 mx-auto my-5">
       <h1 class="display-4 fw-normal">All Projects:</h1>
