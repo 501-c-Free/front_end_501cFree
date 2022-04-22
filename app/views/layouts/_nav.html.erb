@@ -8,7 +8,7 @@
 
         <div class="col-md-3 text-end">
           <% if session[:user_id] %>
-            <a class="btn btn-success" href=<%='/'%>>Dashboard</a>
+            <a class="btn btn-success" href=<%='/'%>>Main Page</a>
             <a class="btn btn-outline-success me-2" data-method= 'delete' href=<%=log_out_path%>>Log Out</a>
           <% else %>
             <a class="btn btn-outline-success me-2" href=<%=auth_google_oauth2_path%>>Log In</a>

@@ -6,7 +6,7 @@
               <div class="col-md-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h6 class="card-title">  <h3><%=developer.name %></h3>
+                    <h6 class="card-title">  <a href = <%= "/developer?id=#{developer.user_id}"%>><h3><%=developer.name %></h3> </a>
                     <p class="card-text">Email: <%= mail_to(developer.email) %></p>
                     <p class="card-text">Github:<%= link_to("Github", developer.github) if developer.github != ""%></p>
                     <p class="card-text">Linkedin:<%= link_to("Linkedin", developer.linkedin) if developer.linkedin != ""%></p>

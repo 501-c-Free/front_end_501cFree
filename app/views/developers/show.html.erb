@@ -18,8 +18,9 @@
 </head>
 
 <div class="projects">
-<div class="social"><a href=<%= @user.linkedin%>><i class="icon ion-social-linkedin"></i></a><a href="#"><i class="icon ion-social-github"></i></a><a href=<%=@user.github %>>
+<div class="social"><a href=<%= @user.linkedin%>><i class="icon ion-social-linkedin"></i></a><a href=<%= @user.github%>><i class="icon ion-social-github"></i></a><a href=<%=@user.github %>>
   </div>
+  <br>
   <h4><%= link_to "View All Projects", projects_path %></h4>
   <br>
   <% unless @projects.nil? %>
@@ -30,7 +31,6 @@
     <%= project.description %>
     <% end %>
   <% end %>
-  <%= link_to "View All Projects", projects_path %>
 </div>
 </div>
 </div>
