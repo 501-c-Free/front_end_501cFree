@@ -16,7 +16,10 @@ class NonProfitsController < ApplicationController
   end
 
   def show
-    @charity_info = NonProfitService.get_user_charity(current_user) if params[:id].present? == false
-    # @charity_info = NonProfitService.get_user_charity(params[:id]) -  causing 404
+    if params[:id].present? == false
+      @charity_info = NonProfitService.get_user_charity(current_user)
+    else
+      @charity_info = NonProfitService.get_user_charity(params[:id])
+    end
   end
 end
