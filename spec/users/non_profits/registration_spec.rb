@@ -5,7 +5,7 @@ RSpec.describe 'NonProfit Registration', type: :feature do
     it 'has a sign up button' do
       visit root_path
 
-      within ('div.container-nav') do
+      within ('div.nav') do
         expect(page).to have_link("Log In")
         expect(page).to have_link("Sign Up")
       end

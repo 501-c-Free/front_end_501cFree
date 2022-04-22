@@ -1,12 +1,20 @@
-<h1>Developers </h1>
+<div class=" overflow-hidden p-3 p-md-5 m-md-1 text-center bg-light">
+    <div class="col-md-5 mx-auto my-5">
+      <h1 class="display-4 fw-normal">All Developers:</h1>
+        <div class="row row-cols-1 row-cols-md-3">
+          <% @developers.each do |developer|  %>
+              <div class="col-md-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h6 class="card-title">  <h3><%=developer.name %></h3>
+                    <p class="card-text">Email: <%= mail_to(developer.email) %></p>
+                    <p class="card-text">Github:<%= link_to("Github", developer.github) if developer.github != ""%></p>
+                    <p class="card-text">Linkedin:<%= link_to("Linkedin", developer.linkedin) if developer.linkedin != ""%></p>
 
-<% @developers.each do |developer| %>
-    <h3><%=developer.name %></h3>
-    <p><%= mail_to(developer.email) %></p>
-
-    <p><%= link_to("Linkedin", developer.linkedin) if developer.linkedin%></p>
-    <p><%= link_to("Github", developer.github) if developer.github%></p>
-    <p><%= link_to("User Dashboard", "/developer?user_id=#{developer.user_id}")%></p>
-    
-
-<% end %>
+                  </div>
+                </div>
+              </div>
+          <% end %>
+        </div>
+    </div>
+  </div>
