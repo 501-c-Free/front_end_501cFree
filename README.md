@@ -64,7 +64,6 @@ This application uses a PostgresQL database to store developer and non-profit in
 <img src="https://user-images.githubusercontent.com/64919819/113648167-6965f280-9649-11eb-8794-0f1082ae8d1c.png" />
 
 
-
 ### <ins>Contributors</ins>
 
 - [Conor Barthel](https://github.com/conorbarthel)
