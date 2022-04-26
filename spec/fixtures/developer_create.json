@@ -1,0 +1,4 @@
+{:data=>
+  {:id=>"1",
+   :type=>"developer",
+   :attributes=>{:name=>"Greg Flaherty", :email=>"gregoryjflaherty@gmail.com", :github=>"cb", :linkedin=>"hire me", :user=>{:user_id=>1}}}}

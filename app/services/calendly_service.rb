@@ -25,7 +25,9 @@ class CalendlyService
       }
     )
     response = conn.get('/users/me')
+
     data = JSON.parse(response.body, symbolize_names: true)
-    @slug = data[:resource][:slug]
+    puts data
+    # @slug = data[:resource][:slug]
   end
 end
