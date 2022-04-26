@@ -13,11 +13,13 @@ class CalendlyService
         }
     end
     data = JSON.parse(response.body, symbolize_names: true)
+    put "Data 1: #{data}"
     access_token = data[:access_token]
   end
 
   def self.get_calendar(code)
     access_token = get_access_token(code)
+    puts "Access Token #{access_token}"
     conn = Faraday.new(
       url: 'https://api.calendly.com',
       headers: {
@@ -25,9 +27,9 @@ class CalendlyService
       }
     )
     response = conn.get('/users/me')
-
+    puts "Conn: #{conn}"
     data = JSON.parse(response.body, symbolize_names: true)
-    puts data
+    puts "Data 2: #{data}"
     # @slug = data[:resource][:slug]
   end
 end
