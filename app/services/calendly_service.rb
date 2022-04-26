@@ -10,8 +10,15 @@ class CalendlyService
         'code' => code,
         'redirect_uri' => ENV['env_redirect'],
         'grant_type' => 'authorization_code',
+        'client_secret' => ENV['calendly_client_secret'],
         }
     end
+
+    puts "ID:" "#{ENV['calendly_client_id']}"
+    puts "Redirect: #{ENV['env_redirect']}"
+    puts "Secret: #{ENV['calendly_client_secret']}"
+
+
     data = JSON.parse(response.body, symbolize_names: true)
     puts "Data 1: #{data}"
     access_token = data[:access_token]
