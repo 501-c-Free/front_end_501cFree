@@ -13,7 +13,7 @@ class CalendlyService
         }
     end
     data = JSON.parse(response.body, symbolize_names: true)
-    put "Data 1: #{data}"
+    puts "Data 1: #{data}"
     access_token = data[:access_token]
   end
 
